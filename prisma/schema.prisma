@@ -15,14 +15,14 @@ model Sheet {
   character      String
   player         String
   strength       Int
-  presente       Int
-  intelect       Int
+  presence       Int
+  intellect      Int
   vigor          Int
   agility        Int
   origin         String
   class          String
   nex            Int
-  pe_round       Int
+  peRound        Int
   displacement   Int
   pv             Int
   pe             Int
@@ -33,8 +33,8 @@ model Sheet {
   skill          Json
   ritual         Json
   ritualDT       Int
-  attacks        Json
-  abilities      Json
+  attack         Json
+  ability        Json
   inventory      Json
   prestigePoints Int
   patent         String
