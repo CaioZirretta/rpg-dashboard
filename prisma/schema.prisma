@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Sheet {
+  id             String @id @default(uuid())
+  character      String
+  player         String
+  strength       Int
+  presente       Int
+  intelect       Int
+  vigor          Int
+  agility        Int
+  origin         String
+  class          String
+  nex            Int
+  pe_round       Int
+  displacement   Int
+  pv             Int
+  pe             Int
+  defense        Int
+  sanity         Int
+  protection     Json
+  resistance     Json
+  skill          Json
+  ritual         Json
+  ritualDT       Int
+  attacks        Json
+  abilities      Json
+  inventory      Json
+  prestigePoints Int
+  patent         String
+  itemLimit      Int
+  creditLimit    String
+  maximumWeight  Int
+  description    Json
+}
