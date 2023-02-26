@@ -11,7 +11,7 @@ export type CreateSheetType = {
     origin: string
     class: string
     nex: number
-    pe_round: number
+    peRound: number
     displacement: number
     pv: number
     pe: number

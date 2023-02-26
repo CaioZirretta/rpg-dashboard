@@ -11,35 +11,48 @@ datasource db {
 }
 
 model Sheet {
+  id                  String            @id @default(uuid())
+  character           String            @unique
+  player              String
+  strength            Int
+  presence            Int
+  intellect           Int
+  vigor               Int
+  agility             Int
+  origin              String
+  class               String
+  nex                 Int
+  peRound             Int
+  displacement        Int
+  pv                  Int
+  pe                  Int
+  defense             Int
+  sanity              Int
+  protection          Json
+  resistance          Json
+  skill               Json
+  ritual              Json
+  ritualDT            Int
+  attack              Json
+  ability             Json
+  inventory           Json
+  prestigePoints      Int
+  patent              String
+  itemLimit           Int
+  creditLimit         String
+  maximumWeight       Int
+  description         Json
+  MarkedCharacterView MarkedCharacter[]
+
+  @@unique([id, character])
+}
+
+model MarkedCharacter {
   id             String @id @default(uuid())
-  character      String
-  player         String
-  strength       Int
-  presence       Int
-  intellect      Int
-  vigor          Int
-  agility        Int
-  origin         String
-  class          String
-  nex            Int
-  peRound        Int
-  displacement   Int
-  pv             Int
-  pe             Int
-  defense        Int
-  sanity         Int
-  protection     Json
-  resistance     Json
-  skill          Json
-  ritual         Json
-  ritualDT       Int
-  attack         Json
-  ability        Json
-  inventory      Json
-  prestigePoints Int
-  patent         String
-  itemLimit      Int
-  creditLimit    String
-  maximumWeight  Int
-  description    Json
+  sheet          Sheet  @relation(fields: [sheetId, sheetCharacter], references: [id, character])
+  sheetId        String @unique
+  sheetCharacter String @unique
+  currentPV      Int
+  currentPE      Int
+  currentSanity  Int
 }

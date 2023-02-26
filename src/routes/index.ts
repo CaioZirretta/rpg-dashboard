@@ -1,6 +1,8 @@
-import { Express, Router } from "express";
-import { SheetRoutes } from "./SheetRoutes";
+import { Express } from "express";
+import { sheetRoutes } from "./SheetRoutes";
+import { markedCharacterRoutes } from "./MarkedCharacterRoutes";
 
 export const router = (app: Express) => {
-    app.use(SheetRoutes);
+    app.use(sheetRoutes);
+    app.use(markedCharacterRoutes)
 }

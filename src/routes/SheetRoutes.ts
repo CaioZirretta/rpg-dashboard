@@ -1,9 +1,11 @@
-import { Router } from "express";
 import { SheetResource } from "../api/sheet/SheetResource";
+import { Router } from "express";
 
-export const SheetRoutes = Router();
+export const sheetRoutes = Router();
 
 const baseUrl = "/sheet";
 
-SheetRoutes.get(baseUrl, SheetResource.list);
-SheetRoutes.post(baseUrl, SheetResource.add);
+sheetRoutes.get(baseUrl, SheetResource.list);
+sheetRoutes.get(baseUrl + ":character", SheetResource.findByCharacter);
+sheetRoutes.post(baseUrl, SheetResource.add);
+sheetRoutes.put(baseUrl, SheetResource.update);
